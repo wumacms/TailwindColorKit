@@ -22,7 +22,7 @@ TailwindColorKit 是一个 Swift 库，为 SwiftUI 应用提供了完整的 Tail
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yourusername/TailwindColorKit.git", from: "1.0.4")
+    .package(url: "https://github.com/yourusername/TailwindColorKit.git", from: "1.0.5")
 ]
 ```
 
