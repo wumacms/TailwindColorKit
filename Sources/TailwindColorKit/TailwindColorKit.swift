@@ -530,7 +530,7 @@ extension Color {
     public static let rose950 = TailwindColor(.rose, .s950).color
     
     // 常用颜色快捷方式
-    public static let primary = blue500
+    // public static let primary = blue500
     public static let secondary = indigo500
     public static let success = emerald500
     public static let danger = red500
@@ -541,16 +541,16 @@ extension Color {
 }
 
 // 扩展View提供Tailwind风格的修饰符
-public extension View {
-    public func backgroundColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500) -> some View {
-        self.background(TailwindColor(base, shade).color)
-    }
-    
-    public func foregroundColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500) -> some View {
-        self.foregroundStyle(TailwindColor(base, shade).color)
-    }
-    
-    public func borderColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500, width: CGFloat = 1) -> some View {
-        self.border(TailwindColor(base, shade).color, width: width)
-    }
-}
+//public extension View {
+//    public func backgroundColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500) -> some View {
+//        self.background(TailwindColor(base, shade).color)
+//    }
+//
+//    public func foregroundColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500) -> some View {
+//        self.foregroundStyle(TailwindColor(base, shade).color)
+//    }
+//
+//    public func borderColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500, width: CGFloat = 1) -> some View {
+//        self.border(TailwindColor(base, shade).color, width: width)
+//    }
+//}
