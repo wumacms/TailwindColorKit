@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct TailwindColor {
     // 基础颜色枚举
-    enum BaseColor: String, CaseIterable {
+    public enum BaseColor: String, CaseIterable, Sendable {
         case slate, gray, zinc, neutral, stone
         case red, orange, amber, yellow, lime
         case green, emerald, teal, cyan, sky
@@ -18,7 +18,7 @@ public struct TailwindColor {
     }
     
     // 颜色深浅等级 (50-950)
-    enum Shade: Int, CaseIterable {
+    public enum Shade: Int, CaseIterable, Sendable {
         case s50 = 50
         case s100 = 100
         case s200 = 200
@@ -32,8 +32,8 @@ public struct TailwindColor {
         case s950 = 950
     }
     
-    let base: BaseColor
-    let shade: Shade
+    public let base: BaseColor
+    public let shade: Shade
     
     // 颜色HEX值字典
     private static let colorHexValues: [BaseColor: [Shade: String]] = [
@@ -238,7 +238,7 @@ public extension Color {
 
 // 扩展Color提供便捷访问Tailwind颜色的方法
 extension Color {
-    static func tailwind(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500) -> Color {
+    public static func tailwind(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500) -> Color {
         TailwindColor(base, shade).color
     }
     
@@ -541,16 +541,16 @@ extension Color {
 }
 
 // 扩展View提供Tailwind风格的修饰符
-extension View {
-    func backgroundColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500) -> some View {
+public extension View {
+    public func backgroundColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500) -> some View {
         self.background(TailwindColor(base, shade).color)
     }
     
-    func foregroundColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500) -> some View {
+    public func foregroundColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500) -> some View {
         self.foregroundStyle(TailwindColor(base, shade).color)
     }
     
-    func borderColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500, width: CGFloat = 1) -> some View {
+    public func borderColor(_ base: TailwindColor.BaseColor, _ shade: TailwindColor.Shade = .s500, width: CGFloat = 1) -> some View {
         self.border(TailwindColor(base, shade).color, width: width)
     }
 }
