@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TailwindColor {
+public struct TailwindColor {
     // 基础颜色枚举
     enum BaseColor: String, CaseIterable {
         case slate, gray, zinc, neutral, stone
@@ -194,7 +194,7 @@ struct TailwindColor {
     ]
     
     // 获取对应的Color
-    var color: Color {
+    public var color: Color {
         guard let hex = Self.colorHexValues[base]?[shade] else {
             return .clear
         }
@@ -209,7 +209,7 @@ struct TailwindColor {
 }
 
 // 扩展Color以支持HEX初始化
-extension Color {
+public extension Color {
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0
