@@ -8,9 +8,8 @@ TailwindColorKit 是一个 Swift 库，为 SwiftUI 应用提供了完整的 Tail
 
 ## 特性
 
-- **完整的 Tailwind 颜色系统** - 包含所有 Tailwind CSS v3 标准颜色
-- **支持所有色阶** - 从 50 到 950（包括官方没有的 950 深度）
-- **SwiftUI 支持** - 完美适配SwiftUI框架
+- **完整的 Tailwind 颜色系统** - 包含所有 Tailwind CSS v4 标准颜色
+- **支持所有色阶** - 从 50 到 950
 - **类型安全** - 通过枚举和静态类型保证颜色安全
 - **暗黑模式支持** - 自动适配系统外观设置
 - **轻量级** - 无额外依赖，纯 Swift 实现
@@ -23,7 +22,7 @@ TailwindColorKit 是一个 Swift 库，为 SwiftUI 应用提供了完整的 Tail
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/yourusername/TailwindColorKit.git", from: "1.0.0")
+    .package(url: "https://github.com/yourusername/TailwindColorKit.git", from: "1.0.4")
 ]
 ```
 
@@ -38,15 +37,17 @@ struct ContentView: View {
         VStack {
             // 使用预定义颜色
             Rectangle()
-                .fill(Color.blue500)
+                .fill(Color.orange500)
                 .frame(width: 100, height: 100)
             
             // 使用便捷方法
             Text("Hello Tailwind")
-                .foregroundColor(.tailwind(.indigo, .s700))
+                .foregroundColor(.tailwind(.yellow, .s100))
                 .padding()
-                .background(Color.slate100)
+                .background(Color.blue500)
         }
+        .frame(width: 300, height: 500)
+        .background(Color.slate800)
     }
 }
 ```
